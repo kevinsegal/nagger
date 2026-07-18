@@ -1,0 +1,27 @@
+{
+  "name": "@nagger/daemon",
+  "version": "0.1.0",
+  "description": "Nagger daemon: composite watches over a local JSON-RPC socket.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "@nagger/core": "workspace:*",
+    "@nagger/notify": "workspace:*"
+  }
+}
