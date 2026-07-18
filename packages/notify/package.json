@@ -1,0 +1,28 @@
+{
+  "name": "@nagger/notify",
+  "version": "0.1.0",
+  "description": "Nagger notification sinks: macOS native, ntfy, webhook, Slack, terminal.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "@nagger/core": "workspace:*",
+    "execa": "^9.5.2",
+    "picocolors": "^1.1.1"
+  }
+}

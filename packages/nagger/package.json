@@ -1,0 +1,52 @@
+{
+  "name": "nagger",
+  "version": "0.1.0",
+  "description": "Nagger — a CLI-first process & deployment sentinel that nags you at progress milestones and on completion.",
+  "license": "MIT",
+  "type": "module",
+  "author": "Kevin Segal <kevinmsegal@gmail.com>",
+  "homepage": "https://github.com/kevinsegal/nagger",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinsegal/nagger.git"
+  },
+  "keywords": [
+    "cli",
+    "notifications",
+    "deployment",
+    "progress",
+    "monitoring",
+    "macos"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "nagger": "./dist/bin.js",
+    "nag": "./dist/bin.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "lint": "eslint src",
+    "build:binary": "bun build ./src/bin.ts --compile --outfile ../../bin/nagger"
+  },
+  "dependencies": {
+    "@nagger/core": "workspace:*",
+    "@nagger/daemon": "workspace:*",
+    "@nagger/notify": "workspace:*",
+    "commander": "^14.0.0",
+    "picocolors": "^1.1.1"
+  }
+}
